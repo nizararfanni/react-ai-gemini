@@ -1,7 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import PastChat from "./PastChat";
+import { Link } from "react-router-dom";
+import { FaRocketchat } from "react-icons/fa";
 
 const Navbar = () => {
   const [isVisible, setIsVisible] = useState(false); // State untuk visibilitas navbar
+
+  // useEffect(() => {
+  //   const savedHistory = localStorage.getItem("chatHistory");
+  //   if (savedHistory) {
+  //     try {
+  //       setChatHistory(JSON.parse(savedHistory));
+  //     } catch (error) {
+  //       console.error("Failed to parse chat history:", error);
+  //     }
+  //   }
+  // }, []);
 
   const toggleNavbar = () => {
     setIsVisible(!isVisible);
@@ -28,15 +42,24 @@ const Navbar = () => {
             : "opacity-0 -translate-x-full"
         }`}
       >
-        <div className="text-center items-center text-2xl font-bold border-b border-blue-500 p-2 ">
-          Navigation
+        <div className="text-center flex justify-evenly items-center text-2xl font-bold border-b border-blue-500 p-2 ">
+          Sidebar
+          <div className="absolute top-[-5] right-2">
+            {" "}
+            <Link
+              to="/chat"
+              className=" text-black rounded-md mb-4 hover:text-[#0766AD]"
+            >
+              <FaRocketchat />
+            </Link>
+          </div>
         </div>
         <nav className="flex-1/4 p-2 font-semibold">
           <ul>
             <li>
               <a
                 href="#"
-                className="mb-2 block p-2 rounded-md hover:bg-blue-500"
+                className="mb-2 block p-2 rounded-md hover:bg-[#0766AD]"
               >
                 Home
               </a>
@@ -44,7 +67,7 @@ const Navbar = () => {
             <li>
               <a
                 href="#"
-                className="mb-2 block p-2 rounded-md hover:bg-blue-500"
+                className="mb-2 block p-2 rounded-md hover:bg-[#0766AD]"
               >
                 About
               </a>
@@ -52,7 +75,7 @@ const Navbar = () => {
             <li>
               <a
                 href="#"
-                className="mb-2 block p-2 rounded-md hover:bg-blue-500"
+                className="mb-2 block p-2 rounded-md hover:bg-[#0766AD]"
               >
                 Service
               </a>
@@ -60,15 +83,17 @@ const Navbar = () => {
             <li>
               <a
                 href="#"
-                className="mb-2 block p-2 rounded-md hover:bg-blue-500"
+                className="mb-2 block p-2 rounded-md hover:bg-[#0766AD]"
               >
                 Contact
               </a>
             </li>
           </ul>
         </nav>
-        <div className="p-4 mb-15 font-bold border-t border-blue-500 flex justify-center">
-          <button className="bg-blue-500 p-2 rounded-md">Logout</button>
+        <div className="p-4 mb-15 font-bold border-t border-blue-500 flex justify-center ">
+          <button className="hover:bg-[#0766AD] p-2 rounded-md w-full">
+            Logout
+          </button>
         </div>
       </div>
     </div>

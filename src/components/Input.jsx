@@ -13,7 +13,7 @@ const Input = ({ handleSubmit, input, setInput, loading }) => {
           onChange={(e) => setInput(e.target.value)}
           placeholder="Ask anything..."
           // disabled={loading}
-          className="pr-12 pl-4 py-3 rounded-md font-semibold shadow-lg w-full text-[#FBF8EF] outline-sky-400 bg-[#205781] shadow-[#3674B5]"
+          className="pr-12 pl-4 py-3 rounded-md font-semibold shadow-lg w-full text-[#FBF8EF] outline-[#91C8E4] outline-2 bg-[#0766AD] shadow-[#3674B5]"
         />
         <button
           type="submit"

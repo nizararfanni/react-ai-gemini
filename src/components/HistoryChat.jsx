@@ -4,7 +4,7 @@ import React, { useState } from "react";
 const HistoryChat = ({ history, loading, error }) => {
   return (
     <div className="flex-grow max-w-lg m-2 flex flex-col min-h-screen">
-      <div className="chat-history shadow-[#9ed5ff] p-4 rounded-md shadow-lg sm:text-sm md:text-md max-h-screen overflow-y-auto">
+      <div className="chat-history font-semibold  p-4 rounded-md max-h-screen overflow-y-auto">
         {history.some((msg) => msg.role === "user") && (
           <p className="text-white font-bold mb-4">Chat History:</p>
         )}
